@@ -1,5 +1,6 @@
 const postConteiner = document.getElementById("post-conteiner");
 const markAsReadConteiner = document.getElementById("mark-as-read-conteiner");
+const latastPostConteiner = document.getElementById("latest-post-conteiner");
 
 // mark as read section
 const markAsRead = (postTittle, postViews) => {
@@ -135,3 +136,38 @@ const posts = async () => {
     });
 }
 posts()
+
+const latastPosts = async () => {
+    const loadedData = await fetch("https://openapi.programming-hero.com/api/retro-forum/latest-posts");
+    const latastPostsData = await loadedData.json();
+    latastPostsData.forEach(latastPost => {
+        console.log(latastPost)
+        const postItem = document.createElement("div");
+        postItem.innerHTML = `
+            <div class="border border-gray-300 p-4 rounded-lg space-y-4">
+            <div>
+                <img class="rounded-lg" src=${latastPost.cover_image} alt="">
+            </div>
+            <div class="flex gap-2 mt-4">
+                <div>
+                    <img src="icons/dateicon.svg" alt="">
+                </div>
+                <p>${latastPost.author?.posted_date || "No post date"}</p>
+            </div>
+            <h3 class="font-semibold text-xl">${latastPost.title}</h3>
+            <p>${latastPost.description}</p>
+            <div class="flex gap-2 items-center">
+                <div class="max-w-[50px]">
+                    <img class="w-full rounded-full" src="${latastPost.profile_image}" alt="">
+                </div>
+                <div>
+                <p class="font-bold">${latastPost.author?.name}</p>
+                <p>${latastPost.author?.designation || "Unknown"}</p>
+                </div>
+            </div>
+            </div>
+        `
+        latastPostConteiner.appendChild(postItem);
+    })
+}
+latastPosts()
