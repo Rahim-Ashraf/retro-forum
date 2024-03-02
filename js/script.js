@@ -1,6 +1,7 @@
 const postConteiner = document.getElementById("post-conteiner");
 const markAsReadConteiner = document.getElementById("mark-as-read-conteiner");
 const latastPostConteiner = document.getElementById("latest-post-conteiner");
+const loader = document.getElementById("loader");
 
 // mark as read section
 const markAsRead = (postTittle, postViews) => {
@@ -23,6 +24,7 @@ const markAsRead = (postTittle, postViews) => {
 
 // posts by search
 const searchPosts = async () => {
+    loader.classList.remove("hidden");
     postConteiner.innerHTML = "";
     const searchPostsInput = document.getElementById("search-posts-input");
     searchPostsInputValue = searchPostsInput.value;
@@ -78,10 +80,16 @@ const searchPosts = async () => {
         `
         postConteiner.appendChild(postItem);
     });
+    searchPostsInput.value = "";
+    setTimeout(()=>{
+        loader.classList.add("hidden");
+    },1000)
+
 }
 
 // posts by default
 const posts = async () => {
+    loader.classList.remove("hidden");
     const dataLoad = await fetch("https://openapi.programming-hero.com/api/retro-forum/posts");
     const data = await dataLoad.json();
     const postsData = data.posts;
@@ -134,6 +142,7 @@ const posts = async () => {
         `
         postConteiner.appendChild(postItem);
     });
+    loader.classList.add("hidden");
 }
 posts()
 
@@ -141,7 +150,6 @@ const latastPosts = async () => {
     const loadedData = await fetch("https://openapi.programming-hero.com/api/retro-forum/latest-posts");
     const latastPostsData = await loadedData.json();
     latastPostsData.forEach(latastPost => {
-        console.log(latastPost)
         const postItem = document.createElement("div");
         postItem.innerHTML = `
             <div class="border border-gray-300 p-4 rounded-lg space-y-4">
