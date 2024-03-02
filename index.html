@@ -15,7 +15,7 @@
     <header class="mx-auto max-w-[1200px]">
         <div class="navbar gap-8">
             <div class="flex-1">
-                <a class="text-4xl font-bold">ReTro</a>
+                <img src="images/logo.png" alt="">
             </div>
             <div class="flex gap-4">
                 <div class="hidden md:grid lg:grid-cols-4 gap-2">
@@ -47,7 +47,7 @@
             </div>
         </div>
 
-        <!-- header section -->
+        <!-- banner section -->
         <section class="hero bg-[url('./images/bgbanner.png')] bg-[#12132D] bg-cover rounded-2xl p-8 lg:p-24 my-8">
             <div class="lg:flex justify-between w-full">
                 <div class="lg:w-2/3">
@@ -82,24 +82,78 @@
         </section>
     </header>
 
-    <main>
+    <main class="mx-auto max-w-[1200px]">
         <!-- lets Discause section -->
         <section>
-            <div class="text-center space-y-4">
+            <div class="text-center space-y-4 my-8">
                 <h1 class="text-4xl font-bold">Let's Discuss</h1>
                 <p>Yes, you can run unit tests and view the results directly within the app. The
                     <br> integrated testing features allow for a streamlined .
                 </p>
             </div>
-            <div>
-                <!-- posts -->
-                <div id="posts">
 
+            <div class="lg:flex gap-8">
+                <!-- posts -->
+                <div id="post-conteiner" class="lg:w-2/3 space-y-4">
+                    <!-- <div class="lg:flex gap-8 bg-gray-200 p-8 rounded-xl">
+                        <div class="relative w-1/6">
+                            <img class="absolute top-0 right-0" src="icons/greenicon.svg" alt="">
+                            <img class="w-full" src="images/joinforum.png" alt="">
+                        </div>
+                        <div class="w-5/6 space-y-4">
+                            <div class="flex gap-8 font-semibold">
+                                <p># Music</p>
+                                <p>Author : Awlad Hossain</p>
+                            </div>
+                            <h2 class="font-bold text-2xl">10 Kids Unaware of Their Halloween Costume</h2>
+                            <p>
+                                It's one thing to subject yourself to ha Halloween costume mishap because, hey that's
+                                your prerogative
+                            </p>
+                            <hr>
+                            <div class="flex justify-between">
+                                <div class="lg:flex gap-4">
+                                    <div class="flex gap-2">
+                                        <img src="icons/comment.svg" alt="">
+                                        <p>560</p>
+                                    </div>
+                                    <div class="flex gap-2">
+                                        <img src="icons/eye.svg" alt="">
+                                        <p>1500</p>
+                                    </div>
+                                    <div class="flex gap-2">
+                                        <img src="icons/watch.svg" alt="">
+                                        <p>5 min</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <img src="icons/markAsRead.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
                 </div>
 
                 <!-- mark as read -->
-                <div>
-
+                <div class="lg:w-1/3">
+                    <div id="mark-as-read-conteiner" class="my-4 mx-2 bg-gray-200 rounded-lg p-4 hidden">
+                        <div class="flex justify-between ">
+                            <h2 class="font-bold text-xl">Title</h2>
+                            <div class="flex gap-2 items-start">
+                                <img src="icons/check.svg" alt="">
+                                <p>mark as read</p>
+                            </div>
+                        </div>
+                        <!-- <div class="flex justify-between bg-white rounded-lg p-4 my-4">
+                            <div class="w-3/4 ">
+                                <h2 class="font-semibold">10 kidddodsfj sldjf</h2>
+                            </div>
+                            <div class="flex gap-2 w-1/4">
+                                <img src="icons/eye.svg" alt="">
+                                <p>450</p>
+                            </div>
+                        </div> -->
+                    </div>
                 </div>
             </div>
         </section>
