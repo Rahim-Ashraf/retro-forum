@@ -24,12 +24,18 @@ const posts = async () => {
     const postsData = data.posts;
 
     postsData.forEach(post => {
-        console.log(post)
+        let isActiveUrl = "icons/greenicon.svg";
+        if (post.isActive) {
+            isActiveUrl = "icons/greenicon.svg";
+        } else {
+            isActiveUrl = "icons/redicon.svg";
+        }
+        console.log(post);
         const postItem = document.createElement("div");
         postItem.innerHTML = `
             <div class="lg:flex gap-8 bg-gray-200 p-8 rounded-xl">
             <div class="relative w-1/2 lg:w-1/6">
-                <img class="absolute -top-2 -right-2" src="icons/greenicon.svg" alt="">
+                <img class="absolute -top-2 -right-2" src="${isActiveUrl}" alt="">
                 <img class="w-full rounded-lg" src=${post.image} alt="">
             </div>
             <div class="lg:w-5/6 space-y-4">
