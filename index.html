@@ -1,13 +1,116 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Retro Forum</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    
+
+<body class="mx-auto max-w-[1440px]">
+
+    <header class="mx-auto max-w-[1200px]">
+        <div class="navbar gap-8">
+            <div class="flex-1">
+                <a class="text-4xl font-bold">ReTro</a>
+            </div>
+            <div class="flex gap-4">
+                <div class="hidden md:grid lg:grid-cols-4 gap-2">
+                    <img title="Home" src="icons/Home.svg" alt="">
+                    <img title="Edit" src="icons/Edit.svg" alt="">
+                    <img title="Add" src="icons/AddPeople.svg" alt="">
+                    <img title="Flag" src="icons/flag.svg" alt="">
+                </div>
+                <div class="w-10 rounded-full">
+                    <button class="btn btn-primary">Sign In</button>
+                </div>
+            </div>
+            <div>
+                <div class="dropdown dropdown-end md:hidden">
+                    <div tabindex="0" role="button" class="btn m-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            class="inline-block w-5 h-5 stroke-current">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </div>
+                    <div tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 gap-2">
+                        <img src="icons/Home.svg" alt="">
+                        <img src="icons/Edit.svg" alt="">
+                        <img src="icons/AddPeople.svg" alt="">
+                        <img src="icons/flag.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- header section -->
+        <section class="hero bg-[url('./images/bgbanner.png')] bg-[#12132D] bg-cover rounded-2xl p-8 lg:p-24 my-8">
+            <div class="lg:flex justify-between w-full">
+                <div class="lg:w-2/3">
+                    <h1 class="text-5xl font-bold text-white">Welcome to the <br>
+                        <span class="text-blue-800">ReTro</span> Forum
+                    </h1>
+                    <p class="py-6 text-white">Share your favorite opinion and win and wp <br> forum coffee mug!</p>
+                    <div class="bg-white w-[340px] rounded-full flex justify-between my-4">
+                        <input class="rounded-full w-full border-none p-2" placeholder="Search here anything" />
+                        <button class="btn btn-primary rounded-full px-8 m-1">Search</button>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-xl lg:w-1/3 space-y-4">
+                    <div class="flex justify-between">
+                        <p>Registered Users</p>
+                        <p>01</p>
+                    </div>
+                    <div class="flex justify-between">
+                        <p>Forum</p>
+                        <p>05</p>
+                    </div>
+                    <div class="flex justify-between">
+                        <p>Topics</p>
+                        <p>01</p>
+                    </div>
+                    <div class="flex justify-between">
+                        <p>Replies</p>
+                        <p>01</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </header>
+
+    <main>
+        <!-- lets Discause section -->
+        <section>
+            <div class="text-center space-y-4">
+                <h1 class="text-4xl font-bold">Let's Discuss</h1>
+                <p>Yes, you can run unit tests and view the results directly within the app. The
+                    <br> integrated testing features allow for a streamlined .
+                </p>
+            </div>
+            <div>
+                <!-- posts -->
+                <div id="posts">
+
+                </div>
+
+                <!-- mark as read -->
+                <div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+
+    </footer>
+
 
     <script src="js/script.js"></script>
 </body>
+
 </html>
