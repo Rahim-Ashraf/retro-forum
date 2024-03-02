@@ -57,7 +57,7 @@ const posts = async () => {
                             <p>${post.posted_time} min</p>
                         </div>
                     </div>
-                    <div onclick="markAsRead('${post?.title}',${post?.view_count})">
+                    <div onclick="markAsRead('${post.title.replace("'", " ")}',${post.view_count})">
                         <img src="icons/markAsRead.svg" alt="">
                     </div>
                 </div>
