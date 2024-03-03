@@ -83,7 +83,7 @@ const searchPosts = async () => {
     searchPostsInput.value = "";
     setTimeout(()=>{
         loader.classList.add("hidden");
-    },1000)
+    },2000)
 
 }
 
@@ -142,7 +142,9 @@ const posts = async () => {
         `
         postConteiner.appendChild(postItem);
     });
-    loader.classList.add("hidden");
+    setTimeout(()=>{
+        loader.classList.add("hidden");
+    },1000)
 }
 posts()
 
